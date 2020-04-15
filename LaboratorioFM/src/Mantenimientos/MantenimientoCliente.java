@@ -189,8 +189,7 @@ public class MantenimientoCliente extends javax.swing.JFrame {
             txtcorreo.setText("");
             txtdireccion.setText("");
             txtTelefono.setText("");
-            
-        
+    
             Label_status.setText("Regiatro exitoso");
             
         } catch (Exception e) {
@@ -260,7 +259,7 @@ public class MantenimientoCliente extends javax.swing.JFrame {
             
             pst.executeUpdate();
             
-            Label_status.setText("Modificación exitosa.");
+            Label_status.setText(" Modificación exitosa. ");
             
         } catch (Exception e) {
         }

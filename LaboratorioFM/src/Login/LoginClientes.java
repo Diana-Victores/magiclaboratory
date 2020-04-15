@@ -122,7 +122,7 @@ public class LoginClientes extends javax.swing.JFrame {
                 this.setVisible(false);
    
             } else {
-                JOptionPane.showMessageDialog(null, "Credenciales incorrectas, por favor intente de nuevo");
+                JOptionPane.showMessageDialog(null,  "Credenciales incorrectas, por favor intente de nuevo");
                 txtUsuario.setText("");
                 txtContraseña.setText("");
             }
