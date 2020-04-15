@@ -196,6 +196,7 @@ public class MantenimientoCliente extends javax.swing.JFrame {
         } catch (Exception e) {
             
         }
+        
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         Object  [] fila=new Object [4];
         fila[0]=txtnombre.getText();
