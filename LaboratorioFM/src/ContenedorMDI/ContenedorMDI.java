@@ -57,6 +57,8 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ContenedorMDI/contenedor.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
+        jMenuBar1.setBackground(new java.awt.Color(204, 0, 0));
+
         jMenu1.setText("CATALOGOS");
 
         jCheckBoxMenuItem3.setSelected(true);
