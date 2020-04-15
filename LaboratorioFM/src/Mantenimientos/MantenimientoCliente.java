@@ -115,7 +115,7 @@ public class MantenimientoCliente extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 100, 30));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 100, 30));
 
         jButton5.setText("MODIFICAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
