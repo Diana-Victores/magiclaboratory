@@ -134,7 +134,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
         // TODO add your handling code here:
         MantenimientoProducto frm = new MantenimientoProducto();
-        frm.setVisible(true);
+        frm.setVisible(true); 
         this.setVisible(false);
         
     }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
