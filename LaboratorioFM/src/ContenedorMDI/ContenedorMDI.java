@@ -7,7 +7,7 @@ package ContenedorMDI;
 
 import Login.LoginClientes;
 import Login.registar;
-import Mantenimientos.MantenimientoCliente;
+import Mantenimientos.MantenimientoClientes;
 import Mantenimientos.MantenimientoProducto;
 
 /**
@@ -119,7 +119,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
         // TODO add your handling code here:
-        MantenimientoCliente frm = new MantenimientoCliente();
+        MantenimientoClientes frm = new MantenimientoClientes();
          frm.setVisible(true);
          this.setVisible(false);
   
