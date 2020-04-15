@@ -80,7 +80,7 @@ public class LoginClientes extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 130, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 130, 30));
 
         jButton3.setText("SALIR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +105,7 @@ public class LoginClientes extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
 
            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/nomina", "root", "");
-            
+             
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
             PreparedStatement pst = cn.prepareStatement("SELECT * FROM clientes WHERE CodigoNombre = ? AND CodigoContrasenia = ?");
            
