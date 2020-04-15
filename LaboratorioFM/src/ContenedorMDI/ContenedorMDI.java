@@ -82,7 +82,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu2.setText("SALIR");
 
         jCheckBoxMenuItem6.setSelected(true);
-        jCheckBoxMenuItem6.setText("Salir del Sistema");
+        jCheckBoxMenuItem6.setText("Salir del Sistema.");
         jCheckBoxMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxMenuItem6ActionPerformed(evt);
