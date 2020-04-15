@@ -136,6 +136,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         MantenimientoProducto frm = new MantenimientoProducto();
         frm.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
 
     /**
