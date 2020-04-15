@@ -93,6 +93,11 @@ public class MantenimientoClientes extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         jButton2.setText("MODIFICAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
         jButton3.setText("ELIMINAR");
@@ -139,6 +144,11 @@ public class MantenimientoClientes extends javax.swing.JFrame {
         jLabel6.setText("NOMBRE");
 
         jButton4.setText("BUSCAR");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -253,6 +263,35 @@ public class MantenimientoClientes extends javax.swing.JFrame {
         bita.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from registrocliente where Nombre = ?");
+            pst.setString(1, txt_buscar.getText().trim());
+
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                txtnombre.setText(rs.getString("CodigoNombre"));
+                txtcorreo.setText(rs.getString("CodigoCorreo"));
+                txtdireccion.setText(rs.getString("CodigoDireccion"));
+                txtTelefono.setText(rs.getString("CodigoTelefono"));
+               
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Persona no registrada.");
+            }
+
+        }catch (Exception e){
+
+    }     
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
