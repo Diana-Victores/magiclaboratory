@@ -5,6 +5,7 @@
  */
 package Login;
 
+import Login.registar;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -102,7 +103,7 @@ public class LoginClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
 
-            Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.jdbc.Driver");
 
            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/nomina", "root", "");
             
