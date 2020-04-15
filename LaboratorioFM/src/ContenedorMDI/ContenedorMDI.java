@@ -6,6 +6,9 @@
 package ContenedorMDI;
 
 import Login.LoginClientes;
+import Login.registar;
+import Mantenimientos.MantenimientoCliente;
+import Mantenimientos.MantenimientoProducto;
 
 /**
  *
@@ -37,7 +40,6 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem4 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem5 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jCheckBoxMenuItem6 = new javax.swing.JCheckBoxMenuItem();
 
@@ -67,12 +69,13 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu1.add(jCheckBoxMenuItem3);
 
         jCheckBoxMenuItem4.setSelected(true);
-        jCheckBoxMenuItem4.setText("Videos");
+        jCheckBoxMenuItem4.setText("Producto");
+        jCheckBoxMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jCheckBoxMenuItem4);
-
-        jCheckBoxMenuItem5.setSelected(true);
-        jCheckBoxMenuItem5.setText("Video Juegos");
-        jMenu1.add(jCheckBoxMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
@@ -114,15 +117,24 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
         // TODO add your handling code here:
-        
+        MantenimientoCliente frm = new MantenimientoCliente();
+         frm.setVisible(true);
+         this.setVisible(false);
   
     }//GEN-LAST:event_jCheckBoxMenuItem3ActionPerformed
 
     private void jCheckBoxMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem6ActionPerformed
         // TODO add your handling code here:
- 
+        
         
     }//GEN-LAST:event_jCheckBoxMenuItem6ActionPerformed
+
+    private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        MantenimientoProducto frm = new MantenimientoProducto();
+        frm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +176,6 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem4;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem5;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem6;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
