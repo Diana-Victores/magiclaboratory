@@ -127,7 +127,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem6ActionPerformed
         // TODO add your handling code here:
-        
+         System.exit(0);
         
     }//GEN-LAST:event_jCheckBoxMenuItem6ActionPerformed
 
