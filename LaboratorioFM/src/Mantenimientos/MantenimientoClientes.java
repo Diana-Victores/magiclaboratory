@@ -217,6 +217,7 @@ public class MantenimientoClientes extends javax.swing.JFrame {
 
             pst.executeUpdate();
 
+            
             txtnombre.setText("");
             txtcorreo.setText("");
             txtdireccion.setText("");
