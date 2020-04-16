@@ -23,6 +23,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
      */
     public MantenimientoProducto() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -59,7 +60,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("REGISTRO PRODUCTO");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 23, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         jLabel2.setText("NOMBRE DE PELICULA");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 78, -1, -1));
@@ -118,7 +119,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 80, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 90, -1));
 
         jLabel5.setText("NOMBRE");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
