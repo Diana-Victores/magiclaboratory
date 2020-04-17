@@ -5,6 +5,7 @@
  */
 package Login;
 
+import Login.registar;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -58,11 +59,11 @@ public class LoginClientes extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("USUARIO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 60, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 60, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CONTRASEÑA");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 180, -1));
         getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, -1));
 
@@ -80,7 +81,7 @@ public class LoginClientes extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 130, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 130, 30));
 
         jButton3.setText("SALIR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -102,10 +103,10 @@ public class LoginClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
 
-            Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.jdbc.Driver");
 
            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/nomina", "root", "");
-             
+            
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
             PreparedStatement pst = cn.prepareStatement("SELECT * FROM clientes WHERE CodigoNombre = ? AND CodigoContrasenia = ?");
            
@@ -122,7 +123,7 @@ public class LoginClientes extends javax.swing.JFrame {
                 this.setVisible(false);
    
             } else {
-                JOptionPane.showMessageDialog(null, "Credenciales incorrectas, por favor intente de nuevo");
+                JOptionPane.showMessageDialog(null,  "Credenciales incorrectas, por favor intente de nuevo");
                 txtUsuario.setText("");
                 txtContraseña.setText("");
             }

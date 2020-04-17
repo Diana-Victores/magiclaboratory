@@ -6,6 +6,9 @@
 package ContenedorMDI;
 
 import Login.LoginClientes;
+import Login.registar;
+import Mantenimientos.MantenimientoClientes;
+import Mantenimientos.MantenimientoProducto;
 
 /**
  *
@@ -31,13 +34,23 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem5 = new javax.swing.JCheckBoxMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jCheckBoxMenuItem7 = new javax.swing.JCheckBoxMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem4 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem5 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem10 = new javax.swing.JCheckBoxMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jCheckBoxMenuItem8 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem9 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jCheckBoxMenuItem6 = new javax.swing.JCheckBoxMenuItem();
 
@@ -47,6 +60,22 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
 
+        jCheckBoxMenuItem5.setSelected(true);
+        jCheckBoxMenuItem5.setText("jCheckBoxMenuItem5");
+
+        jMenu3.setText("jMenu3");
+
+        jMenu4.setText("jMenu4");
+
+        jCheckBoxMenuItem7.setSelected(true);
+        jCheckBoxMenuItem7.setText("jCheckBoxMenuItem7");
+
+        jMenu5.setText("File");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar2.add(jMenu6);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jDesktopPane1.setBackground(new java.awt.Color(153, 153, 255));
@@ -54,6 +83,8 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ContenedorMDI/contenedor.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 0, 0));
 
         jMenu1.setText("CATALOGOS");
 
@@ -67,19 +98,36 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu1.add(jCheckBoxMenuItem3);
 
         jCheckBoxMenuItem4.setSelected(true);
-        jCheckBoxMenuItem4.setText("Videos");
+        jCheckBoxMenuItem4.setText("Peliculas");
+        jCheckBoxMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jCheckBoxMenuItem4);
 
-        jCheckBoxMenuItem5.setSelected(true);
-        jCheckBoxMenuItem5.setText("Video Juegos");
-        jMenu1.add(jCheckBoxMenuItem5);
+        jCheckBoxMenuItem10.setSelected(true);
+        jCheckBoxMenuItem10.setText("Video Juegos");
+        jMenu1.add(jCheckBoxMenuItem10);
 
         jMenuBar1.add(jMenu1);
+
+        jMenu7.setText("RENTAS");
+
+        jCheckBoxMenuItem8.setSelected(true);
+        jCheckBoxMenuItem8.setText("Renta de Peliculas");
+        jMenu7.add(jCheckBoxMenuItem8);
+
+        jCheckBoxMenuItem9.setSelected(true);
+        jCheckBoxMenuItem9.setText("Renta de Video Juegos");
+        jMenu7.add(jCheckBoxMenuItem9);
+
+        jMenuBar1.add(jMenu7);
 
         jMenu2.setText("SALIR");
 
         jCheckBoxMenuItem6.setSelected(true);
-        jCheckBoxMenuItem6.setText("Salir del Sistema");
+        jCheckBoxMenuItem6.setText("Salir del Sistema.");
         jCheckBoxMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxMenuItem6ActionPerformed(evt);
@@ -96,6 +144,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -103,10 +152,13 @@ public class ContenedorMDI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(539, 539, 539)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
 
         pack();
@@ -114,15 +166,25 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
         // TODO add your handling code here:
-        
+        MantenimientoClientes frm = new MantenimientoClientes();
+         frm.setVisible(true);
+         this.setVisible(false);
   
     }//GEN-LAST:event_jCheckBoxMenuItem3ActionPerformed
 
     private void jCheckBoxMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem6ActionPerformed
         // TODO add your handling code here:
- 
+         System.exit(0);
         
     }//GEN-LAST:event_jCheckBoxMenuItem6ActionPerformed
+
+    private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        MantenimientoProducto frm = new MantenimientoProducto();
+        frm.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,15 +223,25 @@ public class ContenedorMDI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem10;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem5;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem6;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem7;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem8;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables
 }
