@@ -5,17 +5,34 @@
  */
 package Proceso;
 
+import ContenedorMDI.ContenedorMDI;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Diana
  */
 public class Proceso extends javax.swing.JFrame {
-
+    
+    DefaultTableModel model =  new DefaultTableModel ();
     /**
      * Creates new form Proceso
      */
     public Proceso() {
         initComponents();
+//        //CODIGO TABLA
+//        model.addColumn("Nombre");
+//        model.addColumn("Apellido");
+//        model.addColumn("Edad");
+//        model.addColumn("Correo");
+//        model.addColumn("Direccion");
+//        model.addColumn("Telefono");
+//        this.tablita.setModel(model);
     }
 
     /**
@@ -28,73 +45,149 @@ public class Proceso extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
+        txtapellido = new javax.swing.JTextField();
+        txtedad = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        Label_status = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        txtbonos = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nombre de Pelicula");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Clasificacion");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        jLabel1.setText("NOMBRE");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Valor Renta");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        jLabel2.setText("APELLIDO");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nombre Video Juego");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+        jLabel3.setText("EDAD");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Clasificacion");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, -1));
+        jLabel4.setText("CORREO");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Valor Renta");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 120, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 120, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 120, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 120, -1));
+        jLabel5.setText("DIRECCION");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accio", "Romance", " ", " " }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 120, -1));
+        jLabel6.setText("TELEFONO");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "pockemon" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 120, -1));
+        jLabel7.setText("ID");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        jPanel2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 144, -1));
+        jPanel2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 144, -1));
+        jPanel2.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 144, -1));
+        jPanel2.add(txtedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 136, -1));
+        jPanel2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 144, -1));
+        jPanel2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 144, -1));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 144, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proceso/pelis.jpg"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 340, 370));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setText("DATOS DE USUARIO");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 11, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proceso/videosj.jpg"))); // NOI18N
-        jLabel8.setText("jLabel8");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, -10, 330, 380));
+        jButton1.setText("REGISTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 90, -1));
+
+        jButton2.setText("MODIFICAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 90, -1));
+
+        jButton3.setText("ELIMINAR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 90, -1));
+
+        jButton4.setText("BUSCAR");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 90, -1));
+
+        Label_status.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jPanel2.add(Label_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
+
+        jButton5.setText("SALIR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 80, -1));
+
+        jButton6.setText("REGRESAR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, -1));
+
+        txtbonos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel2.add(txtbonos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, -1));
+        jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 140, -1));
+
+        jButton7.setText("BONO?");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 80, -1));
+
+        jLabel9.setText("CUANTO HA ACUMULADO?");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, -1));
+
+        jLabel10.setText("BUEN CLIENTE?");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR:", "SI", "NO" }));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, 120, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 730, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +204,222 @@ public class Proceso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6","root","");
+
+            Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6","root","");
+            java.sql.PreparedStatement pst = cn.prepareStatement("insert into bonoss values(?,?,?,?,?,?,?)");
+
+            pst.setString(1, "0");
+            pst.setString(2, txtnombre.getText().trim());
+            pst.setString(3, txtapellido.getText().trim());   
+            pst.setString(4, txtedad.getText().trim());
+            pst.setString(5, txtcorreo.getText().trim());
+            pst.setString(6, txtdireccion.getText().trim());
+            pst.setString(7, txtTelefono.getText().trim());
+
+            pst.executeUpdate();
+
+            
+            txtnombre.setText("");
+            txtapellido.setText("");
+            txtedad.setText(""); 
+            txtcorreo.setText("");
+            txtdireccion.setText("");
+            txtTelefono.setText("");
+
+            Label_status.setText("Registro exitoso");
+
+        } catch (Exception e) {
+
+        }
+         //CODIGO TABLA
+//         String [] agregar=new String [6];
+//         agregar [0]=  txtnombre.getText();
+//         agregar [1]=  txtapellido.getText();
+//         agregar [2]=  txtedad.getText(); 
+//         agregar [3]=  txtcorreo.getText();
+//         agregar [4]=  txtdireccion.getText(); 
+//         agregar [5]=  txtTelefono.getText();
+//         model.addRow(agregar);
+//         
+                
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+            String ID = txtid.getText().trim();
+
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update bonoss set CodigoNombre=?, CodigoApellido=?, Edad=?,CodigoCorreo = ?, CodigoDireccion = ?, CodigoTelefono = ? where ID = " + ID);
+
+            
+            pst.setString(1, txtnombre.getText().trim());
+            pst.setString(2, txtapellido.getText().trim());
+            pst.setString(3, txtedad.getText().trim());
+            pst.setString(4, txtcorreo.getText().trim());
+            pst.setString(5, txtdireccion.getText().trim()); 
+            pst.setString(6, txtTelefono.getText().trim()); 
+           
+            pst.executeUpdate();
+
+            Label_status.setText("Modificación exitosa.");
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6", "root", "");
+            PreparedStatement pst = cn.prepareStatement("delete from bonoss where ID = ?");
+
+            pst.setString(1, txtid.getText().trim());
+            pst.executeUpdate();
+            txtnombre.setText("");
+            txtapellido.setText("");
+            txtedad.setText("");
+            txtcorreo.setText("");
+            txtdireccion.setText("");
+            txtTelefono.setText("");
+            
+
+            Label_status.setText("Registro eliminado.");
+
+        } catch (Exception e) {
+        }
+         
+//         //CODIGO TABLA
+//         int eli=tablita.getSelectedRowCount ();
+//         for (int i=eli-1; i>0; i--){
+//             model.removeRow(i);
+//         }
+     
+         
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from bonoss where ID = ?");
+            pst.setString(1, txtid.getText().trim());
+
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                
+                txtnombre.setText(rs.getString("CodigoNombre"));
+                txtapellido.setText(rs.getString("CodigoApellido"));
+                txtedad.setText(rs.getString("Edad"));
+                txtcorreo.setText(rs.getString("CodigoCorreo"));
+                txtdireccion.setText(rs.getString("CodigoDireccion"));
+                txtTelefono.setText(rs.getString("CodigoTelefono"));
+               
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Persona no registrada.");
+            }
+
+        }catch (Exception e){
+
+    }   
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+                 System.exit(0);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        ContenedorMDI bita=new ContenedorMDI();
+        bita.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+      
+        
+    
+       
+
+        
+         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6","root","");
+
+            Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratorFM6","root","");
+            java.sql.PreparedStatement pst = cn.prepareStatement("insert into bonoss values(?,?,?,?,?,?,?)");
+
+            pst.setString(1, "0");
+            pst.setString(2, txtnombre.getText().trim());
+            pst.setString(3, txtapellido.getText().trim());   
+            pst.setString(4, txtedad.getText().trim());
+            pst.setString(5, txtcorreo.getText().trim());
+            pst.setString(6, txtdireccion.getText().trim());
+            pst.setString(7, txtTelefono.getText().trim());
+
+            pst.executeUpdate();
+
+            
+            txtnombre.setText("");
+            txtapellido.setText("");
+            txtedad.setText(""); 
+            txtcorreo.setText("");
+            txtdireccion.setText("");
+            txtTelefono.setText("");
+            
+            
+            
+
+          Label_status.setText("Registro exitoso");
+
+        } catch (Exception e) {
+            
+           
+        }
+         
+          int bono=Integer.parseInt(txtTotal.getText());
+       // int totales=Integer.parseInt(txtTotales2.getText());
+        int bonos = (bono);
+        if (bono>=0 && bono <=256){
+            txtbonos.setText(String.valueOf("GANO BONO!!"));
+        } else if (bono>=0 && bono <=200){
+            txtbonos.setText(String.valueOf("NO GANO BONO!!"));
+        }
+         
+         
+         
+         //CODIGO TABLA
+//          txtnombre.setText("");
+//          txtapellido.setText("");
+//          txtedad.setText(""); 
+//          txtcorreo.setText("");
+//          txtdireccion.setText("");
+//          txtTelefono.setText("");
+//        
+//        DefaultTableModel modelo = (DefaultTableModel) tablita.getModel();
+//        float t2=0; String t0="";
+//        for(int i=0; i<modelo.getRowCount(); i++)
+//        {
+//            t0=(String)modelo.getValueAt(i,14);
+//            t2=t2+Float.parseFloat(t0);
+//        }
+//        Tsal.setText(String.valueOf(t2));
+          
+          
+          
+
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,9 +457,17 @@ public class Proceso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Label_status;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -158,10 +475,17 @@ public class Proceso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtapellido;
+    private javax.swing.JLabel txtbonos;
+    private javax.swing.JTextField txtcorreo;
+    private javax.swing.JTextField txtdireccion;
+    private javax.swing.JTextField txtedad;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

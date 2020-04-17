@@ -62,6 +62,7 @@ public class MantenimientoClientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -155,16 +156,14 @@ public class MantenimientoClientes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(0, 85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(0, 55, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,7 +196,7 @@ public class MantenimientoClientes extends javax.swing.JFrame {
             txtdireccion.setText("");
             txtTelefono.setText("");
 
-            Label_status.setText("Regis tro exitoso");
+            Label_status.setText("Registro exitoso");
 
         } catch (Exception e) {
 
@@ -275,7 +274,7 @@ public class MantenimientoClientes extends javax.swing.JFrame {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM1", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from registroclientes where ID = ?");
 
-            pst.setString(1, txtnombre.getText().trim());
+            pst.setString(1, txtid.getText().trim());
             pst.executeUpdate();
             txtnombre.setText("");
             txtapellido.setText("");

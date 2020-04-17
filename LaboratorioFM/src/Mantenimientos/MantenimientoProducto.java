@@ -48,10 +48,13 @@ public class MantenimientoProducto extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        txt_buscar = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         Label_status = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtbuenestado = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
+        label_status = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,23 +66,23 @@ public class MantenimientoProducto extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         jLabel2.setText("NOMBRE DE PELICULA");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 78, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         jLabel3.setText("CLASIFICACION ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 116, -1, -1));
-        jPanel1.add(txtpelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 75, 130, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+        jPanel1.add(txtpelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 130, -1));
 
-        txtclasificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accion", "Comedia", "Terror", "Ciencia Ficcion ", "Aventura", "Suspenso", "Romance", " " }));
+        txtclasificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accion", "Comedia", "Terror", "Ciencia Ficcion ", "Aventura", "Suspenso", "Romance", "Infantil", "Caricatura" }));
         txtclasificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtclasificacionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtclasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 113, 130, -1));
+        jPanel1.add(txtclasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 130, -1));
 
         jLabel4.setText(" VALOR DE RENTA ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 151, -1, -1));
-        jPanel1.add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 151, 130, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+        jPanel1.add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 130, -1));
 
         jButton1.setText("REGISTAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +90,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 90, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 90, -1));
 
         jButton2.setText("MODIFICAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +98,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
 
         jButton3.setText("ELIMINAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +106,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 90, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 90, -1));
 
         jButton4.setText("REGRESAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +114,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, -1, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, -1, -1));
 
         jButton5.setText("SALIR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -119,11 +122,7 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 90, -1));
-
-        jLabel5.setText("NOMBRE");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
-        jPanel1.add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 150, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 90, -1));
 
         jButton6.setText("BUSCAR");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -131,23 +130,29 @@ public class MantenimientoProducto extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 90, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 90, -1));
         jPanel1.add(Label_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 80, -1));
+
+        jLabel6.setText("PRODUCTO EN BUEN ESTADO");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        jPanel1.add(txtbuenestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 130, -1));
+
+        jLabel7.setText("ID");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
+        jPanel1.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 130, -1));
+        jPanel1.add(label_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,23 +178,25 @@ public class MantenimientoProducto extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratory","root","");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM2","root","");
 
-            Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratory","root","");
-            java.sql.PreparedStatement pst = cn.prepareStatement("insert into registroproducto values(?,?,?,?)");
+            Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM2","root","");
+            java.sql.PreparedStatement pst = cn.prepareStatement("insert into registroproductos values(?,?,?,?,?)");
 
-            // pst.setString(1, "0");
-            pst.setString(1, txtpelicula.getText().trim());
-            pst.setString(2, txtclasificacion.getSelectedItem().toString());
-            pst.setString(3, txtvalor.getText().trim());
+            pst.setString(1, "0");
+            pst.setString(2, txtpelicula.getText().trim());
+            pst.setString(3, txtclasificacion.getSelectedItem().toString());
+            pst.setString(4, txtvalor.getText().trim());
+            pst.setString(5, txtbuenestado.getText().trim());
             
             pst.executeUpdate();
 
             txtpelicula.setText("");
             txtclasificacion.setSelectedItem("");
             txtvalor.setText("");
+            txtbuenestado.setText("");
            
-            Label_status.setText("Regiatro exitoso");
+            label_status.setText("Registro exitoso");
 
         } catch (Exception e) {
 
@@ -198,42 +205,42 @@ public class MantenimientoProducto extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from registroproducto where Nombre = ?");
-            pst.setString(1, txt_buscar.getText().trim());
+        try {
+            String ID = txtid.getText().trim();
 
-            ResultSet rs = pst.executeQuery();
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM2", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update registroproductos set NombrePelicula=?, CodigoClasificacion=?, CodigoValor=?,BuenEstado = ? where ID = " + ID);
 
-            if(rs.next()){
-                txtpelicula.setText(rs.getString("CodigoNombre"));
-                txtclasificacion.setSelectedItem(rs.getString("CodigoCorreo"));
-                txtvalor.setText(rs.getString("CodigoDireccion"));
-                
-               
+            
+            pst.setString(1, txtpelicula.getText().trim());
+            pst.setString(2, txtclasificacion.getSelectedItem().toString());
+            pst.setString(3, txtvalor.getText().trim());
+            pst.setString(4, txtbuenestado.getText().trim());
+            
+           
+            pst.executeUpdate();
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Persona no registrada.");
-            }
+            label_status.setText("Modificación exitosa.");
 
-        }catch (Exception e){
-
-    } 
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
          try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from registroproducto where Nombre = ?");
-            pst.setString(1, txt_buscar.getText().trim());
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM2", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from registroproductos where ID = ?");
+            pst.setString(1, txtid.getText().trim());
 
             ResultSet rs = pst.executeQuery();
 
             if(rs.next()){
-                txtpelicula.setText(rs.getString("Nombre"));
-                txtclasificacion.setSelectedItem(rs.getString("Puesto"));
-                txtvalor.setText(rs.getString("Sueldo"));
+                
+                txtpelicula.setText(rs.getString("NombrePelicula"));
+                txtclasificacion.setSelectedItem(rs.getString("CodigoClasificacion"));
+                txtvalor.setText(rs.getString("CodigoValor"));
+                txtbuenestado.setText(rs.getString("BuenEstado"));
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Persona no registrada.");
@@ -246,24 +253,21 @@ public class MantenimientoProducto extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try {
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratory","root","");
-           
-           Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
-          // java.sql.PreparedStatement pst = cn.prepareStatement("insert into employee_record values(?,?,?,?,?)");
-           java.sql.PreparedStatement pst = cn.prepareStatement("delete from registroproducto where ID=?"); 
+      try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM2", "root", "");
+            PreparedStatement pst = cn.prepareStatement("delete from registroproductos where ID = ?");
 
-            pst.setString(1, txt_buscar.getText().trim());
+            pst.setString(1, txtid.getText().trim());
+            
             pst.executeUpdate();
-
             txtpelicula.setText("");
             txtclasificacion.setSelectedItem("");
             txtvalor.setText("");
-          
+            txtbuenestado.setText("");
            
+            
 
-            Label_status.setText("Registro Eliminado con exito");
+            label_status.setText("Registro eliminado.");
 
         } catch (Exception e) {
         }
@@ -316,10 +320,13 @@ public class MantenimientoProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txt_buscar;
+    private javax.swing.JLabel label_status;
+    private javax.swing.JTextField txtbuenestado;
     private javax.swing.JComboBox<String> txtclasificacion;
+    private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtpelicula;
     private javax.swing.JTextField txtvalor;
     // End of variables declaration//GEN-END:variables

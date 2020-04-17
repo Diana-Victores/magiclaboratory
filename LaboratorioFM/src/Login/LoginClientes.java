@@ -5,6 +5,7 @@
  */
 package Login;
 
+import ContenedorMDI.ContenedorMDI;
 import Login.registar;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -67,21 +68,21 @@ public class LoginClientes extends javax.swing.JFrame {
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 180, -1));
         getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, -1));
 
-        jButton1.setText("INICIAR SESION");
+        jButton1.setText("REGISTRARSE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 140, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 130, 30));
 
-        jButton2.setText("REGISTRARSE");
+        jButton2.setText("INICIAR SESION");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 130, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 130, 30));
 
         jButton3.setText("SALIR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -105,10 +106,10 @@ public class LoginClientes extends javax.swing.JFrame {
 
            Class.forName("com.mysql.jdbc.Driver");
 
-           Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/nomina", "root", "");
+           Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3", "root", "");
             
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratory", "root", "");
-            PreparedStatement pst = cn.prepareStatement("SELECT * FROM clientes WHERE CodigoNombre = ? AND CodigoContrasenia = ?");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3", "root", "");
+            PreparedStatement pst = cn.prepareStatement("SELECT * FROM clientess WHERE CodigoNombre = ?, CodigoContrasenia = ?");
            
             pst.setString(1, txtUsuario.getText().trim());
             pst.setString(2, txtContraseña.getText().trim());
@@ -130,11 +131,51 @@ public class LoginClientes extends javax.swing.JFrame {
         } catch (HeadlessException | ClassNotFoundException | SQLException e) {
             Logger.getLogger(LoginClientes.class.getName()).log(Level.SEVERE, null, e);
         }
+         
+         
+         
+//           try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3","root","");
+//
+//            Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3","root","");
+//            java.sql.PreparedStatement pst = cn.prepareStatement("insert into clientess values(?,?,?)");
+//
+//            pst.setString(1, "0");
+//            pst.setString(2, txtUsuario.getText().trim());
+//            pst.setString(3, txtContraseña.getText().trim());   
+//     
+//            pst.executeUpdate();
+//
+//            
+//            txtUsuario.setText("");
+//            txtContraseña.setText("");
+//      
+//
+//          //  Label_status.setText("Registro exitoso");
+//
+//        } catch (Exception e) {
+//         JOptionPane.showMessageDialog(null,  "Credenciales incorrectas, por favor intente de nuevo");
+//        }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         registar frm = new registar();
+         ContenedorMDI frm = new ContenedorMDI();
          frm.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed

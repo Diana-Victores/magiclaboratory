@@ -25,7 +25,8 @@ public class registro {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            conectar=DriverManager.getConnection("jdbc:mysql://localhost/nomina","root","");
+            conectar=DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3","root","");
+             Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/laboratorysFM3","root","");
             
           // JOptionPane.showMessageDialog(null,"Conexion Exitosa");
             
