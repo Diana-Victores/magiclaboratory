@@ -1,0 +1,98 @@
+---------- REGISTRO CLIENTES -------------
+
+/*REGISTRO CLIENTES*/
+
+use laboratorysFM1;
+create table registroclientes
+(
+ID  int (15) auto_increment primary key,
+CodigoNombre varchar (30),
+CodigoApellido varchar (30),
+Edad varchar (5),
+CodigoCorreo varchar (50),
+CodigoDireccion varchar (30),
+CodigoTelefono varchar (30)
+) ENGINE=InnoDB;
+
+use laboratorysFM1;
+select * from registrocliente;
+
+
+
+------------------------ REGISTRO PELICULAS--------
+
+/*REGISTRO PRODUCTO PELICULAS*/
+
+use laboratorysFM2;
+create table registroproductos
+(
+ID  int (15) auto_increment primary key,
+NombrePelicula varchar (40),
+CodigoClasificacion varchar (40),
+CodigoValor varchar (10),
+BuenEstado varchar (10)
+) ENGINE=InnoDB;
+
+
+use laboratorysFM2;
+select * from registroproductos;
+
+
+-------------------- REGISTRO VIDEOJUEGOS---------------------------------
+/*REGISTRO PRODUCTO VIDEOJUEGOS*/
+use laboratorysFM2;
+create table registroproductosv
+(
+ID  int (15) auto_increment primary key,
+NombrePelicula varchar (40),
+CodigoClasificacion varchar (40),
+CodigoValor varchar (10),
+BuenEstado varchar (10)
+) ENGINE=InnoDB;
+
+
+
+use laboratorysFM2;
+select * from registroproductosv;
+
+
+
+
+
+--------------- LOGIN -----------------------
+/*LOGIN*/
+
+CREATE DATABASE laboratorysFM3;
+USE laboratorysFM3;
+
+CREATE TABLE clientess
+(
+ID  int (15) auto_increment primary key,
+CodigoNombre varchar (30),
+CodigoContrasenia varchar (30)
+) ENGINE=InnoDB; 
+
+use laboratorysFM3;
+select * from clientess;
+
+insert into clientess (CodigoNombre,CodigoContrasenia)  values ( 'Diana', '1234');
+
+
+
+--------------------- BONO/ PROCESO --------------------------
+/*PROCESO*/
+create database laboratorFM6;
+use laboratorFM6;
+create table bonoss
+(
+ID  int (15) auto_increment primary key,
+CodigoNombre varchar (30),
+CodigoApellido varchar (30),
+Edad varchar (5),
+CodigoCorreo varchar (50),
+CodigoDireccion varchar (30),
+CodigoTelefono varchar (30)
+) ENGINE=InnoDB;
+
+use laboratorFM6;
+select * from bonoss;

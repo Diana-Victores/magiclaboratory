@@ -1,0 +1,11 @@
+use laboratorysFM4;
+create table bono
+(
+ID  int (15) auto_increment primary key,
+CodigoNombre varchar (30),
+CodigoApellido varchar (30),
+Edad varchar (5),
+CodigoCorreo varchar (50),
+CodigoDireccion varchar (30),
+CodigoTelefono varchar (30)
+) ENGINE=InnoDB;
